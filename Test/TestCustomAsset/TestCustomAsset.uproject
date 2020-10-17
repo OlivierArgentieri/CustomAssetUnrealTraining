@@ -5,7 +5,7 @@
 	"Description": "",
 	"Modules": [
 		{
-			"Name": "AssetEditorTutorial",
+			"Name": "TestCustomAsset",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		},

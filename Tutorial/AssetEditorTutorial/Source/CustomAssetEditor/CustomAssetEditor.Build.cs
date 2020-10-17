@@ -12,8 +12,8 @@ public class CustomAssetEditor : ModuleRules
                      "Core",
                      "CoreUObject",
                      "Engine",
-                     "InputCore"
-
+                     "InputCore",
+                     "UnrealEd",
                  }
             );
 
