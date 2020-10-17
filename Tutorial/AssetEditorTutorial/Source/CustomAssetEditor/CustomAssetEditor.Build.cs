@@ -20,7 +20,7 @@ public class CustomAssetEditor : ModuleRules
         PrivateDependencyModuleNames.AddRange(
                 new string[]
                 {
-                    "Tutorial"
+                    "CustomAssetEditor"
                 }
             );
 

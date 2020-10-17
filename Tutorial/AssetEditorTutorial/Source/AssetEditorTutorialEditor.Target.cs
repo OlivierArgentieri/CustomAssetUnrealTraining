@@ -9,6 +9,6 @@ public class AssetEditorTutorialEditorTarget : TargetRules
 	{
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
-		ExtraModuleNames.AddRange( new string[] { "AssetEditorTutorial" } );
+		ExtraModuleNames.AddRange( new string[] { "AssetEditorTutorial", "CustomAssetEditor" } );
 	}
 }
