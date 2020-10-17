@@ -1,0 +1,7 @@
+**/[Ii]ntermediates/*
+**/.vs/*
+**/[Tt]emp/*
+**/[Bb]uild/*
+**/[Bb]inaries/*
+**/DerivedDataCache/*
+**/[Ss]aved/*
