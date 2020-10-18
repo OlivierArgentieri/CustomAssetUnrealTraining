@@ -13,8 +13,7 @@ public class CustomAssetEditor : ModuleRules
             "CoreUObject",
             "Engine",
             "Slate",
-            "UnrealEd",
-            "CustomAssetEditor"
+            "UnrealEd"
         });
 
 
@@ -37,8 +36,7 @@ public class CustomAssetEditor : ModuleRules
             "RHI",
             "Slate",
             "SlateCore",
-            "UnrealEd",
-            "CustomAssetEditor"
+            "UnrealEd"
         });
 
         PrivateIncludePaths.AddRange(new string[]
