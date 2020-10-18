@@ -38,6 +38,7 @@ public class CustomAssetEditor : ModuleRules
             "Slate",
             "SlateCore",
             "UnrealEd",
+            "CustomAssetEditor"
         });
 
         PrivateIncludePaths.AddRange(new string[]
