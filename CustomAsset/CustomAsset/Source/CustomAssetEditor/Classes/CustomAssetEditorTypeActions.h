@@ -2,10 +2,10 @@
 #include "AssetTypeActions_Base.h"
 
 
-class FAssetTypeActions_RuntimeCustomAssetEditor : public FAssetTypeActions_Base
+class FAssetTypeActions_CustomAssetEditor : public FAssetTypeActions_Base
 {
 public:
-	FAssetTypeActions_RuntimeCustomAssetEditor(){}
+	FAssetTypeActions_CustomAssetEditor(){}
 
 protected:
 	//~ Begin FAssetTypeActions_RuntimeCustomAssetEditor
