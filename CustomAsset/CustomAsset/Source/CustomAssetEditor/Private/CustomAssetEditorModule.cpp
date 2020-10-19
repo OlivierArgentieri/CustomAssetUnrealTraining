@@ -2,6 +2,11 @@
 
 #include "CustomAssetEditorModule.h"
 
+
+
+#include "AssetToolsModule.h"
+#include "CustomAssetEditorTypeActions.h"
+#include "IAssetTools.h"
 #include "PropertyEditorModule.h"
 #include "IPlacementModeModule.h"
 #define LOCTEXT_NAMESPACE "CustomAssetEditorModule"
@@ -23,11 +28,16 @@ IMPLEMENT_MODULE(FCustomAssetEditorModule, CustomAssetEditor);
 void FCustomAssetEditorModule::StartupModule()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Hey"));
+	IAssetTools& _assetTools = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools").Get();
+	_assetTools.RegisterAssetTypeActions(MakeShareable(new FAssetTypeActions_CustomAssetEditor));
+
+	FPropertyEditorModule& _propertyModule = FModuleManager::GetModuleChecked<FPropertyEditorModule>("PropertyEditor");
+	//_propertyModule.RegisterCustomClassLayout("CustomAssetEditor", FOnGetDetailCustomizationInstance::CreateStatic(&FCustomAssetEditorModule))
 }
 
 void FCustomAssetEditorModule::ShutdownModule()
 {
-	
+	UE_LOG(LogTemp, Warning, TEXT("ShutdownModule"));
 }
 
 bool FCustomAssetEditorModule::SupportsDynamicReloading()
