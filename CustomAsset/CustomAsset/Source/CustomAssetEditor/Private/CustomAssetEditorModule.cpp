@@ -30,8 +30,8 @@ IMPLEMENT_MODULE(FCustomAssetEditorModule, CustomAssetEditor);
 void FCustomAssetEditorModule::StartupModule()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Hey"));
-	//IAssetTools& _assetTools = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools").Get();
-	//_assetTools.RegisterAssetTypeActions(MakeShareable(new FAssetTypeActions_CustomAssetEditor));
+	IAssetTools& _assetTools = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools").Get();
+	_assetTools.RegisterAssetTypeActions(MakeShareable(new FAssetTypeActions_CustomAssetEditor));
 
 	//FPropertyEditorModule& _propertyModule = FModuleManager::GetModuleChecked<FPropertyEditorModule>("PropertyEditor");
 	//_propertyModule.RegisterCustomClassLayout("CustomAssetEditor", FOnGetDetailCustomizationInstance::CreateStatic(&FCustomAssetEditorDetailsCustomization::MakeInstance));

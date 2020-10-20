@@ -17,7 +17,7 @@ class UCustomAssetEditor : public UObject
 	~UCustomAssetEditor();
 	
 protected:
-	UPROPERTY(EditAnywhere, AdvancedDisplay, Category=Layout, meta = (DisplayName = "Test booelan"))
+	UPROPERTY(EditAnywhere, AdvancedDisplay, Category=CustomAsset, meta = (DisplayName = "Test booelan"))
 	bool bEnable = true;
 
 public:
