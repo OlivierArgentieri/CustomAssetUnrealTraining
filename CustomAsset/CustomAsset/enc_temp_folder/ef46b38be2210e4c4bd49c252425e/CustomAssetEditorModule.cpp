@@ -41,7 +41,7 @@ void FCustomAssetEditorModule::StartupModule()
 
 	IPlacementModeModule::Get().RegisterPlacementCategory(Info);
 
-	//IPlacementModeModule::Get().RegisterPlaceableItem(Info.UniqueHandle, MakeShareable(new FPlaceableItem(nullptr, FAssetData(UCustomAssetEditor::StaticClass()))));
+	IPlacementModeModule::Get().RegisterPlaceableItem(Info.UniqueHandle, MakeShareable(new FPlaceableItem(nullptr, FAssetData(UCustomAssetEditor::StaticClass()))));
 	
 //	IPlacementModeModule& _placementModeModule = IPlacementModeModule::Get();
 //	_placementModeModule.OnPlacementModeCategoryRefreshed().AddRaw(this, &FCustomAssetEditorModule::OnPlacementModeRefresh);

@@ -12,9 +12,10 @@
 		{
 			"Name": "CustomAssetEditor",
 			"Type": "Editor",
-			"LoadingPhase": "Default",
+			"LoadingPhase": "PostEngineInit",
 			"AdditionalDependencies": [
-				"CoreUObject"
+				"CoreUObject",
+				"UnrealEd"
 			]
 		}
 	]

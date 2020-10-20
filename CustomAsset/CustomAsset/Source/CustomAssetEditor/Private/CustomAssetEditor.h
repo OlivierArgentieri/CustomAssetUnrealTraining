@@ -9,9 +9,17 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(ClassGroup = Rendering, BlueprintType)
 class UCustomAssetEditor : public UObject
 {
-	GENERATED_BODY()
 	
+	GENERATED_BODY()
+	~UCustomAssetEditor();
+	
+protected:
+	UPROPERTY(EditAnywhere, AdvancedDisplay, Category=Layout, meta = (DisplayName = "Test booelan"))
+	bool bEnable = true;
+
+public:
+	bool GetEnabled() { return bEnable; }
 };

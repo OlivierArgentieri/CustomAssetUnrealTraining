@@ -1,7 +1,7 @@
 #pragma once
 #include "AssetTypeActions_Base.h"
 
-
+DECLARE_LOG_CATEGORY_EXTERN(MyMenuLog, Log, All);
 class FAssetTypeActions_CustomAssetEditor : public FAssetTypeActions_Base
 {
 public:
@@ -18,6 +18,6 @@ protected:
 	//~ End
 
 private:
-	
+	void CallbackTest();
 	
 };

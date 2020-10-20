@@ -2,8 +2,9 @@
 
 #include "CustomAssetEditor.h"
 
-#define LOCTEXT_NAMESPACE "CustomAssetEditor"
 
+#define LOCTEXT_NAMESPACE "CustomAssetEditor"
+DEFINE_LOG_CATEGORY(MyMenuLog)
 
 UClass* FAssetTypeActions_CustomAssetEditor::GetSupportedClass() const
 {
@@ -28,7 +29,20 @@ uint32 FAssetTypeActions_CustomAssetEditor::GetCategories()
 
 void FAssetTypeActions_CustomAssetEditor::GetActions(const TArray<UObject*>& InObjects, FMenuBuilder& MenuBuilder)
 {
-	// todo 
+	MenuBuilder.AddMenuEntry(
+		LOCTEXT("RuntimeVirtualTexture_FindMaterials", "Find Materials Using This"),
+		LOCTEXT("RuntimeVirtualTexture_FindMaterialsTooltip", "Finds all materials that use this material in the content browser."),
+		FSlateIcon(),
+		FUIAction(
+			FUIAction(FExecuteAction::CreateRaw(this, &FAssetTypeActions_CustomAssetEditor::CallbackTest))
+		)
+	);
+	
+}
+
+void FAssetTypeActions_CustomAssetEditor::CallbackTest()
+{
+	UE_LOG(MyMenuLog, Log, TEXT("Action 1!"));
 }
 
 

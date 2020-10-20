@@ -3,3 +3,7 @@
 
 #include "CustomAssetEditor.h"
 
+UCustomAssetEditor::~UCustomAssetEditor()
+{
+	
+}
