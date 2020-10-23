@@ -1,20 +1,16 @@
 #include "CustomAssetEditorModule.h"
-
-
-
+ 
 #include "AssetToolsModule.h"
 #include "CustomAssetEditor.h"
-#include "CustomAssetEditorDetailsCustomization.h"
-#include "CustomAssetEditorThumbnailRenderer.h"
 #include "CustomAssetEditorTypeActions.h"
 #include "IAssetTools.h"
-#include "PropertyEditorModule.h"
 #include "IPlacementModeModule.h"
+#include "WorkflowOrientedApp/WorkflowTabFactory.h"
 
 #define LOCTEXT_NAMESPACE "CustomAssetEditorModule"
 
 
-class FCustomAssetEditorModule : public ICustomAssetEditorModule
+class FCustomAssetEditorModule : public FWorkflowTabFactory
 {
 public:
 	virtual void StartupModule() override;
@@ -26,6 +22,18 @@ private:
 };
 
 IMPLEMENT_MODULE(FCustomAssetEditorModule, CustomAssetEditor);
+
+
+FCustomAssetEditorModule(TSharedPtr<class FAssetEditorToolkit> InHostingApp)
+	: FWorkflowTabFactory(TEXT("PersonaSequenceRecorderSettings"), InHostingApp)
+{
+	TabLabel = LOCTEXT("AnimationRecordingSettings", "Recording Settings");
+	TabIcon = FSlateIcon(FEditorStyle::GetStyleSetName(), "SequenceRecorder.TabIcon");
+	ViewMenuDescription = LOCTEXT("AnimationRecordingSettings", "Recording Settings");
+	ViewMenuTooltip = LOCTEXT("AnimationRecordingSettings_Tooltip", "Settings for animation recording");
+
+	StructOnScope = MakeShared<FStructOnScope>(FAnimationRecordingSettings::StaticStruct(), (uint8*)&GetMutableDefault<USequenceRecorderSettings>()->DefaultAnimationSettings);
+}
 
 void FCustomAssetEditorModule::StartupModule()
 {
